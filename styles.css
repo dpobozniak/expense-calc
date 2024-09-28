@@ -1,0 +1,61 @@
+body {
+  background: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 1em;
+}
+
+h1 {
+  text-align: center;
+  margin: 0.5em 0 1.1em;
+}
+
+.form-group {
+  margin: 1em 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3em;
+}
+
+input {
+  padding: 0.6em 0.7em;
+  font-size: 100%;
+  border: 1px solid #dbdbdb;
+  border-radius: 0.2em;
+}
+
+button {
+  background-color: #de2161;
+  border: none;
+  border-radius: 3em;
+  color: #fff;
+  display: block;
+  font-size: 100%;
+  margin: 0 auto;
+  padding: 0.7em 2em;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.6em 1em;
+  border: 1px solid #dbdbdb;
+  text-align: right;
+}
+
+th {
+  font-size: 90%;
+  width: 70%;
+}
