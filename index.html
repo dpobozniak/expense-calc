@@ -9,16 +9,21 @@
   <body>
     <div class="container">
       <h1>Kalkulator wynagrodzenia</h1>
-      <form class="input-section" id="form">
+      <form id="form">
         <div class="form-group">
           <label for="grossValue">Ekwiwalent sędziowski brutto:</label>
           <input type="number" id="grossValue" placeholder="np. 262" required />
         </div>
         <div class="form-group">
           <label for="kilometers">Ilość kilometrów:</label>
-          <input type="number" id="kilometers" placeholder="np. 12" />
+          <input
+            type="number"
+            id="kilometers"
+            step="0.1"
+            placeholder="np. 12"
+          />
         </div>
-        <button id="calculateBtn" type="submit">Oblicz</button>
+        <button type="submit">Oblicz</button>
       </form>
 
       <table>
@@ -48,14 +53,11 @@
         </tr>
         <tr>
           <th><b>Razem do wypłaty</b></th>
-          <td data-element="position7"></td>
+          <td><b data-element="position7"></b></td>
         </tr>
-        <tbody id="resultTableBody">
-          <!-- Results will be appended here -->
-        </tbody>
       </table>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
