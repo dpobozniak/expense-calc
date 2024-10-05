@@ -2,6 +2,7 @@ import { calculateNetValue } from "./calculate.js";
 
 const grossInput = document.getElementById("grossValue");
 const kilometersInput = document.getElementById("kilometers");
+const costsInput = document.getElementById("costs");
 const formElement = document.getElementById("form");
 
 formElement.addEventListener("submit", (event) => {
@@ -10,7 +11,7 @@ formElement.addEventListener("submit", (event) => {
   const grossValue = parseFloat(grossInput.value);
   const kilometers = parseFloat(kilometersInput.value);
 
-  const result = calculateNetValue(grossValue, kilometers);
+  const result = calculateNetValue(grossValue, kilometers, costsInput.checked);
 
   if (result) {
     document.querySelector('[data-element="position1"]').textContent =

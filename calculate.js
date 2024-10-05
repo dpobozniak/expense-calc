@@ -1,4 +1,6 @@
-export function calculateNetValue(grossValue, kilometers) {
+import { COST_OF_INCOME, TAX_RATE, TRAVEL_ALLOWANCE_RATE } from "./consts.js";
+
+export function calculateNetValue(grossValue, kilometers, countCosts) {
   if (isNaN(grossValue)) {
     alert("Please enter a valid gross value.");
     return;
@@ -8,19 +10,19 @@ export function calculateNetValue(grossValue, kilometers) {
   const position1 = grossValue;
 
   // Step 2: Calculate 20% of the gross value (cost of obtaining income)
-  const position2 = position1 * 0.2;
+  const position2 = countCosts ? position1 * COST_OF_INCOME : 0;
 
   // Step 3: Taxation base (round down or up)
   const position3 = Math.round(position1 - position2);
 
   // Step 4: Tax (12% of taxation base) - round the tax value
-  const position4 = Math.round(position3 * 0.12);
+  const position4 = Math.round(position3 * TAX_RATE);
 
   // Step 5: Net value (gross - tax)
   const position5 = position1 - position4;
 
   // Step 6: Travel allowance (kilometers * 1.15) - only if kilometers are provided
-  const position6 = isNaN(kilometers) ? 0 : kilometers * 1.15;
+  const position6 = isNaN(kilometers) ? 0 : kilometers * TRAVEL_ALLOWANCE_RATE;
 
   // Step 7: Final net value (net value + travel allowance)
   const position7 = position5 + position6;
