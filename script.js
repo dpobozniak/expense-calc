@@ -1,4 +1,5 @@
 import { calculateNetValue } from "./calculate.js";
+import { trackCalculation } from "./analytics.js";
 
 const grossInput = document.getElementById("grossValue");
 const kilometersInput = document.getElementById("kilometers");
@@ -10,6 +11,9 @@ formElement.addEventListener("submit", (event) => {
 
   const grossValue = parseFloat(grossInput.value);
   const kilometers = parseFloat(kilometersInput.value);
+
+  // Track calculation event
+  trackCalculation(grossValue, kilometers, costsInput.checked);
 
   const result = calculateNetValue(grossValue, kilometers, costsInput.checked);
 
